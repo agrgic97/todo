@@ -5,16 +5,20 @@ import Form from './components/Form';
 import Filter from './components/Filter';
 import './App.css';
 
+import { database } from './firebase-config';
+import { collection, onSnapshot } from 'firebase/firestore';
 
 export default function App() {
 
-  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || []);
+  const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('All');
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  },[todos]);
+    onSnapshot(collection(database, "todos"), (snapshot) => {
+      setTodos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
+    });
+  },[]);
 
   return(
     <div className='App'>
