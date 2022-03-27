@@ -21,11 +21,15 @@ body {
 }
 
 .Add-Todo {
+  font-weight: 900;
   background: green;
   color: #FFF;
   padding: 10px;
   border-radius: 2px;
+  border: none;
+  text-decoration: none;
 }
+
 
 .Todo {
   display: flex;
