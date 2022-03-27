@@ -1,38 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ccc;
+  font-family: sans-serif;
+}
+
 .App {
-  text-align: center;
+  background: #FFF;
+  width: 30%;
+  margin: 50px auto;
+  padding: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Add-Todo {
+  background: green;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-left: 5px solid green;
+}
+
+.Todo * {
+  margin: 5px;
+}
+
+.completed {
+  border-left: 5px solid red;
+}
+
+.completed h2 {
+  text-decoration: line-through;
+  text-decoration-color: black;
+  color: #999;
+}
+
+.Form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  padding: 20px;
+  border: 2px solid #ccc; 
+  border-radius: 2px;
+}
+
+.Form-Group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Error {
+  color: red;
+  font-size: .7rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.Form input[type=text] {
+  height: 20px;
+  width: 300px;
+}
+
+.Form label {
+  margin-right: 5px;
+}
+
+.Save-Button {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px 10px;
+  
+}
+
+.clicked {
+  background: red;
+}
+
+.Filter {
+  margin: 10px 0;
+  padding: 2px;
+  font-size: 1rem;
 }
