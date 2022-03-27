@@ -1,5 +1,6 @@
-export default function Todo(props) {
+import React from 'react';
 
+export default function Todo(props) {
     const updateTodo = (id) => {
         props.SetTodos(todos => todos.map(todo => {
             if(todo.id === id) todo.completed = !todo.completed
@@ -12,7 +13,7 @@ export default function Todo(props) {
             <div>
                 <h2 className='Task'>{ props.Task }</h2>
             </div>
-            <a onClick={ () => { props.SetTodos(todos => todos.filter(todo => todo.id !== props.ID))}} href>&#10060;</a>
+            <a onClick={ () => { props.SetTodos(todos => todos.filter(todo => todo.id !== props.ID))}} href="true"><span role="img" aria-label='x'>&#10060;</span></a>
         </div>
     )
 }

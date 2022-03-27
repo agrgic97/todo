@@ -41,6 +41,10 @@ body {
   margin: 5px;
 }
 
+.Todo a {
+  text-decoration: none;
+}
+
 .completed {
   border-left: 5px solid red;
 }

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Filter(props) {
     return(
         <select className='Filter' onChange={ (e) => { props.SetFilter(filter => e.target.value) } }>
